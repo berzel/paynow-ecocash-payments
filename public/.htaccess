@@ -20,6 +20,7 @@
     RewriteRule ^ index.php [L]
 
     # Redirect to HTTPS
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP_HOST} (www\.)?protected-hamlet-65033.herokuapp.com
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
