@@ -10,6 +10,7 @@ This service only has one endpoint `POST /v1/payments`. Here's the base URL `htt
 - `paynow_integration_key` : Your Paynow integration key as provided by paynow. This field is required
 - `customer_number` : The EcoCash phone number of the user you're charging in the format 0777777777. This field is required
 - `amount` : The amount you're charging the user/customer. Example 700.98. This field is required
+- `result_url` : For applications which listen for the pyanow update and don't poll for a result. This the url paynow will post to. This field is optional
 
 Here's a screenshot for reference
 

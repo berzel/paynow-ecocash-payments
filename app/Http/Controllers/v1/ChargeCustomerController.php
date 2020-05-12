@@ -12,6 +12,7 @@ class ChargeCustomerController extends Controller {
         $validated = $this->validate($request, [
             'paynow_integration_id' => ['required', 'numeric'],
             'paynow_integration_key' => ['required'],
+            'result_url' => ['nullable', 'url'],
             'customer_number' => ['required'],
             'amount' => ['required']
         ]);
@@ -20,7 +21,7 @@ class ChargeCustomerController extends Controller {
             $validated['paynow_integration_id'],
             $validated['paynow_integration_key'],
             'http://example.com/gateways/paynow/update',
-            'http://example.com/return?gateway=paynow'
+            $validated['result_url'] ?? 'http://example.com/return?gateway=paynow'
         );
 
         $payment = $paynow->createPayment('REF-45', 'berzelbtumbude@gmail.com');
