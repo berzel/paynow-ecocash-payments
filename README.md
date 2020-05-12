@@ -11,4 +11,8 @@ This service only has one endpoint `POST /v1/payments`. Here's the base URL `htt
 - `customer_number` : The EcoCash phone number of the user you're charging in the format 0777777777. This field is required
 - `amount` : The amount you're charging the user/customer. Example 700.98. This field is required
 
+Here's a screenshot for reference
+
+![example postman screenshot](https://raw.githubusercontent.com/Berzel/paynow-ecocash-payments-service/master/docs/paynow-ecocash-payments.png)
+
 That's all.
