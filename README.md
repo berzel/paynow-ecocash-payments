@@ -1,6 +1,6 @@
 # Paynow Ecocash Payments Service
 
-This little service allows you to accepts ecocash payments on your website through [Paynow](https://paynow.co.zw), without you having to worry about the programming. Before using this service you must be registered with Paynow and have your ID and Key at the ready.
+Accepting EcoCash payments through [paynow](https://paynow.co.zw) should not be a pain for the developer, that is why I created this API. This API attempts to ease out the integration with [paynow](https://paynow.co.zw) so that the developer can focus on the most important parts of the project. The API is very similar to the OneMoney API but I have created them as seperate projects so that you can scale them independently depending on your requirements. If you wish however you can modify each service to accept both payment methods. Before using this service you must be registered with [paynow](https://paynow.co.zw) and have your ID and Key at the ready. Enjoy.
 
 ## Official Documentation
 
