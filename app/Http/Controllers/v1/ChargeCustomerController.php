@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Rules\EcocashNumber;
 use Illuminate\Http\Request;
 use Paynow\Payments\Paynow;
 
@@ -13,7 +14,7 @@ class ChargeCustomerController extends Controller {
             'paynow_integration_id' => ['required', 'numeric'],
             'paynow_integration_key' => ['required'],
             'result_url' => ['nullable', 'url'],
-            'customer_number' => ['required'],
+            'customer_number' => ['required', new EcocashNumber],
             'amount' => ['required']
         ]);
 
