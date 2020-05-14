@@ -4,7 +4,7 @@ namespace App\Http\Requests\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class EcocashNumber implements Rule {
+class ValidEcocashNumber implements Rule {
 
     /**
      * Determine if the validation rule passes.
