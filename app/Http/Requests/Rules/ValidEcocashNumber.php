@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Rules;
 
+use App\EcoCashNumber;
 use Illuminate\Contracts\Validation\Rule;
+use InvalidArgumentException;
 
 class ValidEcocashNumber implements Rule {
 
@@ -14,7 +16,14 @@ class ValidEcocashNumber implements Rule {
      * @return bool
      */
     public function passes($attribute, $number) {
-        return strlen($number) == 10 && intval(str_split($number)[2]) >= 7;
+        try {
+            new EcoCashNumber($number);
+            return true;
+        }
+
+        catch (InvalidArgumentException $exception) {
+            return false;
+        }
     }
 
     /**
@@ -23,6 +32,6 @@ class ValidEcocashNumber implements Rule {
      * @return string|array
      */
     public function message() {
-        return 'The :attribute must be a valid ecocash number in the format 0777777777.';
+        return 'The :attribute must be a valid ecocash number in the format 077XXXXXXX.';
     }
 }
