@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests\Rules;
 
-use App\EcoCashNumber;
-use Illuminate\Contracts\Validation\Rule;
 use InvalidArgumentException;
+use App\ValueObjects\EcoCashNumber;
+use Illuminate\Contracts\Validation\Rule;
 
 class ValidEcocashNumber implements Rule {
 

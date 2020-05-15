@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\v1;
 
+use App\ValueObjects\Money;
 use Illuminate\Http\Request;
+use App\ValueObjects\Currency;
 use App\Services\PaynowService;
+use App\ValueObjects\EcoCashNumber;
 use App\Http\Controllers\Controller;
 use App\Commands\ChargeCustomerCommand;
 use App\Http\Requests\Rules\ValidEcocashNumber;
@@ -41,11 +44,12 @@ class ChargeCustomerController extends Controller {
             'customer_number' => ['required', new ValidEcocashNumber],
         ]);
 
-        $command = new ChargeCustomerCommand();
-        $command->amount = $validated['amount'];
+        $amount = new Money($validated['amount'], Currency::RTGS());
+        $customer = new EcoCashNumber($validated['customer_number']);
+        
+        $command = new ChargeCustomerCommand($customer, $amount);
         $command->reason = $validated['reason'] ?? null;
         $command->resultUrl = $validated['result_url'] ?? null;
-        $command->customerNumber = $validated['customer_number'];
         $command->customerEmail = $validated['customer_email'] ?? null;
 
         $payment = $this->paynowService->chargeCustomer($command);

@@ -37,9 +37,9 @@ class PaynowService {
 
         $payment = new Payment();
         $paynowPayment = $paynow->createPayment("REF-$payment->id", $command->customerEmail ?? 'berzelbtumbude@gmail.com');
-        $paynowPayment->add($command->reason ?? 'Item 1', $command->amount);
+        $paynowPayment->add($command->reason ?? 'Item 1', $command->getAmount());
 
-        $response = $paynow->sendMobile($paynowPayment, $command->customerNumber, 'ecocash');
+        $response = $paynow->sendMobile($paynowPayment, $command->getCustomerNumber(), 'ecocash');
 
         if ($response->success()) {
             // TODO: Update the payment details and save to DB
