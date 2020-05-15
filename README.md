@@ -6,8 +6,6 @@ Accepting EcoCash payments through [paynow](https://paynow.co.zw) should not be 
 
 This service only has one endpoint `POST /v1/payments`. Here's the base URL `https://paynow-ecocash-payments.herokuapp.com`, you can also use it to discover the API on your own.
 
-- `paynow_integration_id` : The ID of your integration as provided by Paynow. This field is required
-- `paynow_integration_key` : Your Paynow integration key as provided by paynow. This field is required
 - `customer_number` : The EcoCash phone number of the user you're charging in the format 0777777777. This field is required
 - `amount` : The amount you're charging the user/customer. Example 700.98. This field is required
 - `result_url` : For applications which listen for the pyanow update and don't poll for a result. This the url paynow will post to. This field is optional
