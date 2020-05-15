@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\ValueObjects\PaynowID;
 use App\Services\PaynowService;
+use App\ValueObjects\PaynowKey;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +17,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(PaynowService::class, function ($app) {
-            return new PaynowService(config('paynow.id'), config('paynow.key'));
+            $id = new PaynowID(config('paynow.id'));
+            $key = new PaynowKey(config('paynow.key'));
+            
+            return new PaynowService($id, $key);
         });
     }
 }

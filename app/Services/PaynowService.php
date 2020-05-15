@@ -5,6 +5,8 @@ namespace App\Services;
 use Exception;
 use App\Payment;
 use Paynow\Payments\Paynow;
+use App\ValueObjects\PaynowID;
+use App\ValueObjects\PaynowKey;
 use App\TransferObjects\PaymentDto;
 use App\Commands\ChargeCustomerCommand;
 
@@ -19,9 +21,9 @@ class PaynowService {
      * @param string $id
      * @param string $key
      */
-    public function __construct(string $id, string $key) {
-        $this->paynowId = $id;
-        $this->paynowKey = $key;
+    public function __construct(PaynowID $id, PaynowKey $key) {
+        $this->paynowId = $id->getValue();
+        $this->paynowKey = $key->getValue();
     }
 
     /**
