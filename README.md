@@ -6,7 +6,8 @@ Accepting EcoCash payments through [paynow](https://paynow.co.zw) should not be 
 
 This service only has one endpoint `POST /v1/payments`. The sample API is hosted on Heroku at [https://paynow-ecocash-payments.herokuapp.com](`https://paynow-ecocash-payments.herokuapp.com`) and you can use it to test out the API before deploying the application in your own environment. When it comes time to deploy the application in your own environment you have one of the following options:
 
-1. Deploying to Heroku. You can host the application yourself on heroku. For convinience you can use the following deploy to heroku button
+1. Deploying to Heroku. You can host the application yourself on heroku. For convinience you can use the following deploy to heroku button.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 2. Using a docker image. If you're using docker you can simply run the following command on your computer to start the application
