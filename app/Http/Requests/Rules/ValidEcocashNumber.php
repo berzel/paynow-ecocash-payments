@@ -17,8 +17,7 @@ class ValidEcocashNumber implements Rule {
      */
     public function passes($attribute, $number) {
         try {
-            new EcoCashNumber($number);
-            return true;
+            return !! new EcoCashNumber($number);
         }
 
         catch (InvalidArgumentException $exception) {

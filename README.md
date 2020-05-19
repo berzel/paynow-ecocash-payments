@@ -4,7 +4,18 @@ Accepting EcoCash payments through [paynow](https://paynow.co.zw) should not be 
 
 ## Official Documentation
 
-This service only has one endpoint `POST /v1/payments`. Here's the base URL `https://paynow-ecocash-payments.herokuapp.com`, you can also use it to discover the API on your own.
+This service only has one endpoint `POST /v1/payments`. The sample API is hosted on Heroku at [https://paynow-ecocash-payments.herokuapp.com](`https://paynow-ecocash-payments.herokuapp.com`) and you can use it to test out the API before deploying the application in your own environment. When it comes time to deploy the application in your own environment you have one of the following options:
+
+1. Deploying to Heroku. You can host the application yourself on heroku. For convinience you can use the following deploy to heroku button
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+2. Using a docker image. If you're using docker you can simply run the following command on your computer to start the application
+
+`$ docker run berzel/paynow-ecocash-payment`
+
+
+### API Documentation
+The endpoint `POST /v1/payments` requires the following fields to work
 
 - `customer_number` : The EcoCash phone number of the user you're charging in the format 0777777777. This field is required
 - `amount` : The amount you're charging the user/customer. Example 700.98. This field is required
@@ -13,5 +24,3 @@ This service only has one endpoint `POST /v1/payments`. Here's the base URL `htt
 Here's a screenshot for reference
 
 ![example postman screenshot](https://raw.githubusercontent.com/Berzel/paynow-ecocash-payments-service/master/docs/paynow-ecocash-payments.png)
-
-That's all.
