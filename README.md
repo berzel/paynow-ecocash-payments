@@ -10,10 +10,7 @@ This service only has one endpoint `POST /v1/payments`. The sample API is hosted
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-2. Using a docker image. If you're using docker you can simply run the following command on your computer to start the application
-
-`$ docker run berzel/paynow-ecocash-payment`
-
+2. Using a docker image. `// TODO: Create a docker image for this app`
 
 ### API Documentation
 The endpoint `POST /v1/payments` requires the following fields to work
