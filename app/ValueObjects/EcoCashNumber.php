@@ -8,19 +8,25 @@ class EcoCashNumber {
 
     private $number;
 
+    /**
+     * Create a new ecocash number instance
+     *
+     * @param [type] $number
+     */
     public function __construct($number) {
-        if (strlen($number) !== 10) {
-            throw new InvalidArgumentException('EcoCash number should be 10 digits long.');
+        $econetNumberPattern = '/^((\+|00)?263|0)?7(7|8)\d{7}$/';
+        if ( ! preg_match($econetNumberPattern, $number)) {
+            throw new InvalidArgumentException('Invalid ecocash number.');
         }
 
-        $prefix = substr($number, 0, 3);
-        if (!in_array($prefix, ['077', '078'])) {
-            throw new InvalidArgumentException('EcoCash number should be in the format 077XXXXXXX or 078XXXXXXX');
-        }
-
-        $this->number = $number;
+        $this->number = '0' . substr($number, -9);
     }
 
+    /**
+     * Get the number
+     *
+     * @return void
+     */
     public function getValue() {
         return $this->number;
     }

@@ -31,6 +31,6 @@ class ValidEcocashNumber implements Rule {
      * @return string|array
      */
     public function message() {
-        return 'The :attribute must be a valid ecocash number in the format 077XXXXXXX.';
+        return 'The :attribute must be a valid ecocash number in the format 77XXXXXXX.';
     }
 }
