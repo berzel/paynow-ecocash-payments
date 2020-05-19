@@ -1,0 +1,17 @@
+{
+    "name": "Paynow EcoCash Payments REST API",
+    "description": "A REST API that allows developers to easily integrate with Paynow for accepting EcoCash Payments",
+    "repository": "https://github.com/Berzel/paynow-ecocash-payments",
+    "keywords": ["paynow", "ecocash", "rest api"],
+    "website": "https://paynow-ecocash-payments.herokuapp.com/",
+    "success_url": "/",
+    "env": {
+        "PAYNOW_ID": {
+          "description": "The ID of your paynow integration as provided by paynow"
+        },
+        "PAYNOW_KEY": {
+          "description": "The Paynow integration key as provided by paynow"
+        }
+      }
+  }
+  
